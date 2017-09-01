@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Algorithm,Data Structure,C++," />
 
 
 
@@ -95,13 +95,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="TeslaX">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="Serialization is the process of converting a data structure or object into a sequence of bits so that it can be stored in a file or memory buffer, or transmitted across a network connection link to be">
+<meta name="keywords" content="Algorithm,Data Structure,C++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Serialize and Deserialize">
+<meta property="og:url" content="http://yoursite.com/2017/09/01/Structure/index.html">
 <meta property="og:site_name" content="TeslaX">
+<meta property="og:description" content="Serialization is the process of converting a data structure or object into a sequence of bits so that it can be stored in a file or memory buffer, or transmitted across a network connection link to be">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-09-01T21:48:43.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TeslaX">
+<meta name="twitter:title" content="Serialize and Deserialize">
+<meta name="twitter:description" content="Serialization is the process of converting a data structure or object into a sequence of bits so that it can be stored in a file or memory buffer, or transmitted across a network connection link to be">
 
 
 
@@ -131,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/01/Structure/"/>
 
 
 
 
 
-  <title>TeslaX</title>
+  <title>Serialize and Deserialize | TeslaX</title>
   
 
 
@@ -168,8 +173,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -252,9 +256,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -284,9 +288,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/01/Structure/" itemprop="url">Serialize and Deserialize</a></h1>
+          <h1 class="post-title" itemprop="name headline">Serialize and Deserialize</h1>
         
 
         <div class="post-meta">
@@ -347,9 +349,7 @@
       
 
       
-        
-          
-            <p>Serialization is the process of converting a data structure or object into a sequence of bits so that it can be stored in a file or memory buffer, or transmitted across a network connection link to be reconstructed later in the same or another computer environment.</p>
+        <p>Serialization is the process of converting a data structure or object into a sequence of bits so that it can be stored in a file or memory buffer, or transmitted across a network connection link to be reconstructed later in the same or another computer environment.</p>
 <h3 id="Design-an-algorithm-to-encode-and-decode-BST"><a href="#Design-an-algorithm-to-encode-and-decode-BST" class="headerlink" title="Design an algorithm to encode and decode BST."></a>Design an algorithm to encode and decode BST.</h3><blockquote>
 <p>leetcode 449 : Serialize and Deserialize BST<br>刚开始觉得怎么和271类似，于是呼写了个一毛一样的，居然过了。</p>
 </blockquote>
@@ -357,8 +357,6 @@
 <p>觉得不太对劲，看了下discuss区里一个用c++的高票，果然牛逼啊。基本思路依旧是preorder遍历，但是各种inline，memcpy的应用再加上用4个char来代替string，以及利用binary serch tree 的特性免去了对string的解析和内存的浪费，按照这个思路从新写了下代码。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">class Codec &#123;</div><div class="line">public:</div><div class="line"></div><div class="line">    // Encodes a tree to a single string.</div><div class="line">    string serialize(TreeNode* root) &#123;</div><div class="line">        string res;</div><div class="line">        dfs(root,res);</div><div class="line">        return res;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    // Decodes your encoded X`data to tree.</div><div class="line">    TreeNode* deserialize(string data) &#123;</div><div class="line">        int pos = 0;</div><div class="line">        return reconstruct(data, pos, INT_MIN, INT_MAX);</div><div class="line">    &#125;</div><div class="line">private:</div><div class="line">    inline void dfs(TreeNode* root,string &amp;res)&#123;</div><div class="line">        if(!root) return;</div><div class="line">        char buf[4];</div><div class="line">        memcpy(buf,&amp;(root-&gt;val),sizeof(int));</div><div class="line">        for(const auto&amp; c : buf) res.push_back(c);</div><div class="line">        dfs(root-&gt;left,res);</div><div class="line">        dfs(root-&gt;right,res);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    inline auto reconstruct(string data, int &amp;pos, int min_v, int max_v) -&gt; TreeNode*&#123;</div><div class="line">        if (pos &gt;= data.size()) return nullptr;</div><div class="line">        int val;</div><div class="line">        memcpy(&amp;val,&amp;data[pos],sizeof(int));</div><div class="line">        if (val &gt; max_v || val &lt; min_v)&#123;</div><div class="line">            return nullptr;</div><div class="line">        &#125;</div><div class="line">        auto root = new TreeNode(val);</div><div class="line">        pos += sizeof(int);</div><div class="line">        root-&gt;left = reconstruct(data,pos,min_v,val);</div><div class="line">        root-&gt;right = reconstruct(data,pos,val,max_v);</div><div class="line">        return root;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 
-          
-        
       
     </div>
     
@@ -373,145 +371,40 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/30/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tianpei">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/QFT.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="TeslaX">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/30/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-30T20:49:32-07:00">
-                2017-08-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/08/30/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/08/30/hello-world/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
+            <a href="/tags/Data-Structure/" rel="tag"># Data Structure</a>
           
-
+            <a href="/tags/C/" rel="tag"># C++</a>
           
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>菜鸟码农一枚，找工作期间需要一点输出端来帮助建立自己知识体系，又因为从小不爱写东西导致现在语言组织能力愈加低下，如果有代码或者逻辑方面有问题的请给我留言，非常喜欢被打脸的感觉。lol</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/30/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
       
     </footer>
   </div>
@@ -521,10 +414,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -532,6 +426,17 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -552,8 +457,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -656,6 +570,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Design-an-algorithm-to-encode-and-decode-BST"><span class="nav-number">1.</span> <span class="nav-text">Design an algorithm to encode and decode BST.</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -833,6 +763,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
 
   
 
@@ -850,6 +784,18 @@
       <script id="dsq-count-scr" src="https://blog-teslax-me.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2017/09/01/Structure/';
+          this.page.identifier = '2017/09/01/Structure/';
+          this.page.title = 'Serialize and Deserialize';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://blog-teslax-me.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
