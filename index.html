@@ -279,7 +279,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/01/Structure/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/02/largest-BST-subtree/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tianpei">
@@ -298,7 +298,141 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/09/01/Structure/" itemprop="url">Serialize and Deserialize</a></h1>
+                <a class="post-title-link" href="/2017/09/02/largest-BST-subtree/" itemprop="url">largest_BST_subtree</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-02T13:47:09-07:00">
+                2017-09-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/09/02/largest-BST-subtree/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/09/02/largest-BST-subtree/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>[Leetcode 333] Largest BST Subtree<br>Given a binary tree, find the largest subtree which is a Binary Search Tree (BST), where largest means subtree with largest number of nodes in it.</p>
+<p>When I first saw it, the method that check all the validate subtree in this tree is brute force and time complexity is O(pow(n,2)). Actually, we only need to pass the whole tree one time and remember the information that we need for their parents, since a subtree is not a BST, the subtree with parent node is neither. We can traverse the tree in DFS and return the info in a tuple.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    int largestBSTSubtree(TreeNode* root) &#123;</div><div class="line">        int res = 0;</div><div class="line">        dfs(root, res);</div><div class="line">        return res;</div><div class="line">    &#125;</div><div class="line">     inline auto dfs(TreeNode* root,int&amp; maxVal) -&gt; tuple&lt;int,int,int,int&gt;&#123;</div><div class="line">        if(!root) return &#123;1,0,INT_MAX,INT_MIN&#125;;</div><div class="line">        auto item_1 = dfs(root-&gt;left,maxVal);</div><div class="line">        auto item_2 = dfs(root-&gt;right,maxVal);</div><div class="line">        if (!get&lt;0&gt;(item_1) || !get&lt;0&gt;(item_2) || root-&gt;val &lt;= get&lt;3&gt;(item_1) || root-&gt;val &gt; get&lt;2&gt;(item_2))&#123;</div><div class="line">            return &#123;0,0,0,0&#125;;</div><div class="line">        &#125;</div><div class="line">        int maxNode = get&lt;1&gt;(item_1) + get&lt;1&gt;(item_2) + 1;</div><div class="line">        maxVal = max(maxVal, maxNode);</div><div class="line">        return &#123;1,maxNode,min(root-&gt;val,get&lt;2&gt;(item_1)),max(root-&gt;val,get&lt;3&gt;(item_2))&#125;;     </div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>std::tuple is a new and flexible data struture likes std::pair, the different is we need to use std::get&lt;&gt; with explict template argument to access the elements in the tuple.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/01/serialize_deserialize/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tianpei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/QFT.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TeslaX">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/01/serialize_deserialize/" itemprop="url">Serialize and Deserialize</a></h1>
         
 
         <div class="post-meta">
@@ -329,9 +463,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/09/01/Structure/#comments" itemprop="discussionUrl">
+                <a href="/2017/09/01/serialize_deserialize/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/01/Structure/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/09/01/serialize_deserialize/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -586,7 +720,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -599,7 +733,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
