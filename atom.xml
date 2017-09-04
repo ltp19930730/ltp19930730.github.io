@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-09-02T21:01:28.000Z</updated>
+  <updated>2017-09-04T02:14:24.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,15 +16,16 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Largest BST subtree</title>
-    <link href="http://yoursite.com/2017/09/02/largest-BST-subtree/"/>
-    <id>http://yoursite.com/2017/09/02/largest-BST-subtree/</id>
-    <published>2017-09-02T20:47:09.000Z</published>
-    <updated>2017-09-02T21:01:28.000Z</updated>
+    <title>Verify Preorder Sequence in Binary Search Tree</title>
+    <link href="http://yoursite.com/2017/09/03/verify-postorder-sequence-BST/"/>
+    <id>http://yoursite.com/2017/09/03/verify-postorder-sequence-BST/</id>
+    <published>2017-09-04T01:37:21.000Z</published>
+    <updated>2017-09-04T02:14:24.000Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;[Leetcode 333] Largest BST Subtree&lt;br&gt;Given a binary tree, find the largest subtree which is a Binary Search Tree (BST), where largest me
+      &lt;blockquote&gt;
+&lt;p&gt;Given an array of numbers, verify whether it is the correct preorder traversal sequence of a binary search tree. You may ass
     
     </summary>
     
@@ -34,6 +35,32 @@
       <category term="C++" scheme="http://yoursite.com/tags/C/"/>
     
       <category term="Tree" scheme="http://yoursite.com/tags/Tree/"/>
+    
+      <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Largest BST subtree</title>
+    <link href="http://yoursite.com/2017/09/02/largest-BST-subtree/"/>
+    <id>http://yoursite.com/2017/09/02/largest-BST-subtree/</id>
+    <published>2017-09-02T20:47:09.000Z</published>
+    <updated>2017-09-04T02:13:59.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Given a binary tree, find the largest subtree which is a Binary Search Tree (BST), where largest means subtree with largest number of nod
+    
+    </summary>
+    
+    
+      <category term="Algorithm" scheme="http://yoursite.com/tags/Algorithm/"/>
+    
+      <category term="C++" scheme="http://yoursite.com/tags/C/"/>
+    
+      <category term="Tree" scheme="http://yoursite.com/tags/Tree/"/>
+    
+      <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
   </entry>
   
@@ -53,9 +80,9 @@
     
       <category term="Algorithm" scheme="http://yoursite.com/tags/Algorithm/"/>
     
-      <category term="C++" scheme="http://yoursite.com/tags/C/"/>
-    
       <category term="Data Structure" scheme="http://yoursite.com/tags/Data-Structure/"/>
+    
+      <category term="C++" scheme="http://yoursite.com/tags/C/"/>
     
   </entry>
   
