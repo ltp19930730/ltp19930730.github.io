@@ -279,6 +279,149 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/04/binary-tree-traverse/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tianpei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/QFT.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TeslaX">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/04/binary-tree-traverse/" itemprop="url">binary_tree_traverse</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-04T12:50:28-07:00">
+                2017-09-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/09/04/binary-tree-traverse/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/09/04/binary-tree-traverse/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>Given a binary tree, return the inorder traversal of its nodes’ values.</p>
+</blockquote>
+<p>##Inorder</p>
+<p>Three ways to traverse the binary tree :<br>1) recursive time: O(N) space: O(N)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    vector&lt;int&gt; inorderTraversal(TreeNode* root) &#123;</div><div class="line">        vector&lt;int&gt; res;</div><div class="line">        helper(root,res);</div><div class="line">        return res;</div><div class="line">    &#125;</div><div class="line">    void helper(TreeNode* root, vector&lt;int&gt;&amp;res)&#123;</div><div class="line">        if (!root) return;</div><div class="line">        helper(root-&gt;left,res);</div><div class="line">        res.push_back(root-&gt;val);</div><div class="line">        helper(root-&gt;right,res);</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>2) iterative time: O(N) space: O(N)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    vector&lt;int&gt; inorderTraversal(TreeNode* root) &#123;</div><div class="line">        if(!root) return &#123;&#125;;</div><div class="line">        vector&lt;int&gt; res;</div><div class="line">        stack&lt;TreeNode*&gt; st;</div><div class="line">        auto cur = root;</div><div class="line">        while(cur)&#123;</div><div class="line">            st.push(cur);</div><div class="line">            cur = cur-&gt;left;</div><div class="line">        &#125;</div><div class="line">        while(!st.empty())&#123;</div><div class="line">            cur = st.top();</div><div class="line">            st.pop();</div><div class="line">            res.push_back(cur-&gt;val);</div><div class="line">            cur = cur-&gt;right;</div><div class="line">            while(cur)&#123;</div><div class="line">                st.push(cur);</div><div class="line">                cur = cur-&gt;left;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return res;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>merge two while<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    vector&lt;int&gt; inorderTraversal(TreeNode* root) &#123;</div><div class="line">        if(!root) return &#123;&#125;;</div><div class="line">        vector&lt;int&gt; res;</div><div class="line">        stack&lt;TreeNode*&gt; st;</div><div class="line">        auto cur = root;</div><div class="line">        while(cur || !st.empty())&#123;</div><div class="line">            if (cur)&#123;</div><div class="line">                st.push(cur);</div><div class="line">                cur = cur-&gt;left;</div><div class="line">            &#125;else&#123;</div><div class="line">                cur = st.top();</div><div class="line">                st.pop();</div><div class="line">                res.push_back(cur-&gt;val);</div><div class="line">                cur = cur-&gt;right;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return res;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>3) morris traversal time: O(N) space: O(1)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    vector&lt;int&gt; inorderTraversal(TreeNode* root) &#123;</div><div class="line">        if(!root) return &#123;&#125;;</div><div class="line">        vector&lt;int&gt; res;</div><div class="line">        auto cur = root;</div><div class="line">        while(cur)&#123;</div><div class="line">            if (!cur-&gt;left)&#123;</div><div class="line">                res.push_back(cur-&gt;val);</div><div class="line">                cur = cur-&gt;right;</div><div class="line">            &#125;else&#123;</div><div class="line">                auto pred = findPred(cur);</div><div class="line">                if (!pred-&gt;right)&#123;</div><div class="line">                    pred-&gt;right = cur;</div><div class="line">                    cur = cur-&gt;left;</div><div class="line">                &#125;else&#123;</div><div class="line">                    pred-&gt;right = nullptr;</div><div class="line">                    res.push_back(cur-&gt;val);</div><div class="line">                    cur = cur-&gt;right;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return res;</div><div class="line">    &#125;</div><div class="line">    inline auto findPred(TreeNode* root) -&gt; TreeNode*&#123;</div><div class="line">        auto cur = root-&gt;left;</div><div class="line">        while(cur-&gt;right &amp;&amp; cur-&gt;right!= root)&#123;</div><div class="line">            cur = cur-&gt;right;</div><div class="line">        &#125;</div><div class="line">        return cur;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">## Preorder</div><div class="line">1) Recursive solution</div></pre></td></tr></table></figure>
+<p>class Solution {<br>public:<br>    vector<int> preorderTraversal(TreeNode<em> root) {<br>        vector<int> res;<br>        helper(root,res);<br>        return res;<br>    }<br>    void helper(TreeNode</int></em> root,vector<int> &amp;res){<br>        if (!root) return;<br>        res.push_back(root-&gt;val);<br>        helper(root-&gt;left,res);<br>        helper(root-&gt;right,res);<br>    }<br>};<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">2) Iterative solution</div></pre></td></tr></table></figure></int></int></p>
+<p>class Solution {<br>public:<br>    vector<int> preorderTraversal(TreeNode<em> root) {<br>        vector<int> res;<br>        stack&lt;TreeNode</int></em>&gt; st;<br>        auto cur = root;<br>        while(cur || !st.empty()){<br>            if (cur){<br>                res.push_back(cur-&gt;val);<br>                st.push(cur);<br>                cur = cur-&gt;left;<br>            }else{<br>                cur = st.top();<br>                st.pop();<br>                cur = cur-&gt;right;<br>            }<br>        }<br>        return res;<br>    }<br>};<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">3) Morris traversal</div></pre></td></tr></table></figure></int></p>
+<p>class Solution {<br>public:<br>    vector<int> preorderTraversal(TreeNode<em> root) {<br>        vector<int> res;<br>        stack&lt;TreeNode</int></em>&gt; st;<br>        auto cur = root;<br>        while(cur){<br>            res.push_back(cur-&gt;val);<br>            if (!cur-&gt;left){<br>                cur = cur-&gt;right;<br>            }else{<br>                auto pred = findPred(cur);<br>                if(!pred-&gt;right){<br>                    pred-&gt;right = cur;<br>                    cur = cur-&gt;left;<br>                }else{<br>                    pred-&gt;right = nullptr;<br>                    res.pop_back();<br>                    cur = cur-&gt;right;<br>                }<br>            }<br>        }<br>        return res;<br>    }<br>    inline auto findPred(TreeNode<em> node)-&gt; TreeNode</em>{<br>        auto cur = node-&gt;left;<br>        while(cur-&gt;right &amp;&amp; cur-&gt;right != node){<br>            cur = cur-&gt;right;<br>        }<br>        return cur;<br>    }<br>};<br>```</int></p>
+<p>晚点补充postorder的三种方法，先吃鸡！</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/03/verify-postorder-sequence-BST/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -856,7 +999,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
