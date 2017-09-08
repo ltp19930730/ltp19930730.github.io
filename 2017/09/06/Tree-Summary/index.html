@@ -97,18 +97,18 @@
 
 
 
-<meta name="description" content="二叉树遍历的问题Binary Tree preorder traversal ,inorder traversal, postorder traversalin 3 ways : Recursive, iterative and Morris solution( space:O(1))Iterative : while( cur || !st.empty()) BST问题Closest Binar">
+<meta name="description" content="二叉树遍历的问题Binary Tree preorder traversal ,inorder traversal, postorder traversalin 3 ways : Recursive, iterative and Morris solution( space:O(1))Iterative : while( cur || !st.empty()) BST问题98.Validate B">
 <meta name="keywords" content="Algorithm,Summary,Leetcode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Tree Section Summary">
 <meta property="og:url" content="http://yoursite.com/2017/09/06/Tree-Summary/index.html">
 <meta property="og:site_name" content="TeslaX">
-<meta property="og:description" content="二叉树遍历的问题Binary Tree preorder traversal ,inorder traversal, postorder traversalin 3 ways : Recursive, iterative and Morris solution( space:O(1))Iterative : while( cur || !st.empty()) BST问题Closest Binar">
+<meta property="og:description" content="二叉树遍历的问题Binary Tree preorder traversal ,inorder traversal, postorder traversalin 3 ways : Recursive, iterative and Morris solution( space:O(1))Iterative : while( cur || !st.empty()) BST问题98.Validate B">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-09-07T04:45:35.000Z">
+<meta property="og:updated_time" content="2017-09-08T21:30:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tree Section Summary">
-<meta name="twitter:description" content="二叉树遍历的问题Binary Tree preorder traversal ,inorder traversal, postorder traversalin 3 ways : Recursive, iterative and Morris solution( space:O(1))Iterative : while( cur || !st.empty()) BST问题Closest Binar">
+<meta name="twitter:description" content="二叉树遍历的问题Binary Tree preorder traversal ,inorder traversal, postorder traversalin 3 ways : Recursive, iterative and Morris solution( space:O(1))Iterative : while( cur || !st.empty()) BST问题98.Validate B">
 
 
 
@@ -362,11 +362,17 @@
 
       
         <h3 id="二叉树遍历的问题"><a href="#二叉树遍历的问题" class="headerlink" title="二叉树遍历的问题"></a>二叉树遍历的问题</h3><p>Binary Tree preorder traversal ,inorder traversal, postorder traversal<br>in 3 ways : Recursive, iterative and Morris solution( space:O(1))<br>Iterative : while( cur || !st.empty())</p>
-<h3 id="BST问题"><a href="#BST问题" class="headerlink" title="BST问题"></a>BST问题</h3><p>Closest Binary Search Tree Value i , ii(hard)</p>
+<h3 id="BST问题"><a href="#BST问题" class="headerlink" title="BST问题"></a>BST问题</h3><p>98.Validate Binary Search Tree<br>Inorder traversal 用一个flag 来判断是否是BST第一个点。<br>preorder traversal 传min 和max 给下一层来限定范围</p>
+<p>286.Inorder Successor in BST.<br>如果值大于或等于节点的值 就只能往右子树找，和左子树没关系了，<br>反之root为备选节点 如果递归左子树返回nullptr则选择root做为succ 反之选择返回的节点为succ。<br>2种写法 一种cursive 另一种 iterative</p>
+<p>173.Binary Search Tree Iterator<br>一个stack存节点 findnext push 近right的节点。</p>
+<p>96.Unique Binary Search Trees<br>动态规划 左边子树个数为0-n-1 右边子树个数位0-n-1 将每种对于的情况相乘并相加可以得到n个元素的 unique BST.<br>Unique Binary Search Trees ii<br>递归的方法做 bottom up 比较复杂(要多练习)</p>
+<p>Closest Binary Search Tree Value i </p>
 <ol>
 <li>找到离target最近的一个node val。</li>
 <li>如果 target &lt; root-&gt;val 就去看左子树 并且判断是否空。</li>
-<li>否则看右子树 并且得到一个最小的 取差值返回 离target更近的点。</li>
+<li>否则看右子树 并且得到一个最小的 取差值返回 离target更近的点。<br>Closest Binary Search Tree Value ii(hard)</li>
+<li>Inorder 以及用一个vector 来存k个元素 类似滑动窗口</li>
+<li>两个stack ,Pred and Succ 来存前驱节点和后驱节点. (想不到)</li>
 </ol>
 <h3 id="路径和的问题"><a href="#路径和的问题" class="headerlink" title="路径和的问题"></a>路径和的问题</h3><p>Binary Tree Path<br>Path sum 1 2 3 4 </p>
 <ol>
