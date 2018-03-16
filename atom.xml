@@ -48,11 +48,11 @@
     
       <category term="C++" scheme="http://yoursite.com/tags/C/"/>
     
-      <category term="Algorithm" scheme="http://yoursite.com/tags/Algorithm/"/>
-    
       <category term="String" scheme="http://yoursite.com/tags/String/"/>
     
       <category term="DP" scheme="http://yoursite.com/tags/DP/"/>
+    
+      <category term="Algorithm" scheme="http://yoursite.com/tags/Algorithm/"/>
     
   </entry>
   
@@ -70,11 +70,11 @@
     </summary>
     
     
-      <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
-    
       <category term="Algorithm" scheme="http://yoursite.com/tags/Algorithm/"/>
     
       <category term="Summary" scheme="http://yoursite.com/tags/Summary/"/>
+    
+      <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
   </entry>
   
@@ -95,9 +95,9 @@
     
       <category term="C++" scheme="http://yoursite.com/tags/C/"/>
     
-      <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
-    
       <category term="Algorithm" scheme="http://yoursite.com/tags/Algorithm/"/>
+    
+      <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
   </entry>
   
@@ -118,9 +118,9 @@
     
       <category term="C++" scheme="http://yoursite.com/tags/C/"/>
     
-      <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
-    
       <category term="Algorithm" scheme="http://yoursite.com/tags/Algorithm/"/>
+    
+      <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
       <category term="Tree" scheme="http://yoursite.com/tags/Tree/"/>
     
@@ -142,9 +142,9 @@
     
       <category term="C++" scheme="http://yoursite.com/tags/C/"/>
     
-      <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
-    
       <category term="Algorithm" scheme="http://yoursite.com/tags/Algorithm/"/>
+    
+      <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
       <category term="Tree" scheme="http://yoursite.com/tags/Tree/"/>
     
