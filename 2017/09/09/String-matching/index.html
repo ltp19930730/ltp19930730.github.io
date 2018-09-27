@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="en">
+<html class="theme-next mist use-motion" lang="en">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -97,18 +97,18 @@
 
 
 
-<meta name="description" content="Regular Expression Matching 两个字符串匹配的hard题，以前一直觉得很难做，现在感觉就是那么一回事，通过dp来bottom-up的问题很多，这两个就是非常典型的例子，状态转移需要好好研究下不然很容易出错。下次补充dfs + memorized的方法. 12345678910111213141516171819202122232425262728293031class S">
+<meta name="description" content="Solutions for leetcode 10">
 <meta name="keywords" content="C++,String,DP,Algorithm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="String Matching Problem">
 <meta property="og:url" content="http://yoursite.com/2017/09/09/String-matching/index.html">
 <meta property="og:site_name" content="TeslaX">
-<meta property="og:description" content="Regular Expression Matching 两个字符串匹配的hard题，以前一直觉得很难做，现在感觉就是那么一回事，通过dp来bottom-up的问题很多，这两个就是非常典型的例子，状态转移需要好好研究下不然很容易出错。下次补充dfs + memorized的方法. 12345678910111213141516171819202122232425262728293031class S">
+<meta property="og:description" content="Solutions for leetcode 10">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-09-11T04:40:13.000Z">
+<meta property="og:updated_time" content="2018-09-27T19:11:45.926Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="String Matching Problem">
-<meta name="twitter:description" content="Regular Expression Matching 两个字符串匹配的hard题，以前一直觉得很难做，现在感觉就是那么一回事，通过dp来bottom-up的问题很多，这两个就是非常典型的例子，状态转移需要好好研究下不然很容易出错。下次补充dfs + memorized的方法. 12345678910111213141516171819202122232425262728293031class S">
+<meta name="twitter:description" content="Solutions for leetcode 10">
 
 
 
@@ -116,7 +116,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Mist',
     version: '5.1.2',
     sidebar: {"position":"left","display":"hide","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -361,7 +361,8 @@
       
 
       
-        <p>Regular Expression Matching</p>
+        <p>Solutions for leetcode 10 <a id="more"></a></p>
+<p>Regular Expression Matching</p>
 <p>两个字符串匹配的hard题，以前一直觉得很难做，现在感觉就是那么一回事，通过dp来bottom-up的问题很多，这两个就是非常典型的例子，状态转移需要好好研究下不然很容易出错。下次补充dfs + memorized的方法.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    bool isMatch(string s, string p) &#123;</div><div class="line">        int len1 = s.size();</div><div class="line">        int len2 = p.size();</div><div class="line">        vector&lt;vector&lt;bool&gt;&gt; dp(len1+1,vector&lt;bool&gt;(len2+1,false));</div><div class="line">        dp[0][0] = true;</div><div class="line">        for(int i = 2; i &lt;= len2; ++i)&#123;</div><div class="line">            if(p[i-1] == &apos;*&apos;)&#123;</div><div class="line">                dp[0][i] = dp[0][i-2];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        for(int i = 1; i &lt;= len1; ++i)&#123;</div><div class="line">            for(int j = 1; j &lt;= len2; ++j)&#123;</div><div class="line">                char s_c = s[i-1];</div><div class="line">                char p_c = p[j-1];</div><div class="line">                if(p_c == &apos;.&apos; || s_c == p_c)&#123;</div><div class="line">                    dp[i][j] = dp[i-1][j-1];</div><div class="line">                &#125;else if(p_c == &apos;*&apos;)&#123;</div><div class="line">                    if(p[j-2] == &apos;.&apos; || p[j-2] == s_c)&#123;</div><div class="line">                        dp[i][j] = dp[i-1][j] || dp[i][j-1] || dp[i][j-2];</div><div class="line">                    &#125;else&#123;</div><div class="line">                        dp[i][j] = dp[i][j-2]; </div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return dp[len1][len2];</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <p>wildcard matching</p>
@@ -629,7 +630,7 @@
 
   <span class="post-meta-divider">|</span>
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.2</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.2</div>
 
 
         
@@ -717,13 +718,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
-
-
 
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>

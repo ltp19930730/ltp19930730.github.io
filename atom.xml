@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-09-13T01:55:38.988Z</updated>
+  <updated>2018-09-27T20:28:13.142Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,11 +20,11 @@
     <link href="http://yoursite.com/2018/09/12/begin-again/"/>
     <id>http://yoursite.com/2018/09/12/begin-again/</id>
     <published>2018-09-13T01:11:54.000Z</published>
-    <updated>2018-09-13T01:55:38.988Z</updated>
+    <updated>2018-09-27T20:28:13.142Z</updated>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;好久不见&quot;&gt;&lt;a href=&quot;#好久不见&quot; class=&quot;headerlink&quot; title=&quot;好久不见&quot;&gt;&lt;/a&gt;好久不见&lt;/h3&gt;&lt;p&gt;时间过的真快，工作都快一年了 发现自己再也没有写过任何post&lt;br&gt;所以决定以后竟然在这瞎写点感想吧 反正域名已经被我取关
+      &lt;p&gt;时间过的真快，工作都快一年了
     
     </summary>
     
@@ -38,11 +38,11 @@
     <link href="http://yoursite.com/2017/09/12/Buy-Sell-Stock/"/>
     <id>http://yoursite.com/2017/09/12/Buy-Sell-Stock/</id>
     <published>2017-09-13T01:19:08.000Z</published>
-    <updated>2017-09-13T01:42:27.000Z</updated>
+    <updated>2018-09-27T19:05:56.942Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;121.Best Time to Buy and Sell Stock I&lt;br&gt;和leetcode 53类似，用一个变量来记录子问题的最小值。&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;
+      &lt;p&gt;Leetcode 121,122,123,188
     
     </summary>
     
@@ -54,12 +54,11 @@
     <link href="http://yoursite.com/2017/09/09/String-matching/"/>
     <id>http://yoursite.com/2017/09/09/String-matching/</id>
     <published>2017-09-09T23:39:52.000Z</published>
-    <updated>2017-09-11T04:40:13.000Z</updated>
+    <updated>2018-09-27T19:11:45.926Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;Regular Expression Matching&lt;/p&gt;
-&lt;p&gt;两个字符串匹配的hard题，以前一直觉得很难做，现在感觉就是那么一回事，通过dp来bottom-up的问题很多，这两个就是非常典型的例子，状态转移需要好好研究下不然很容易出错。下次补充dfs + memo
+      &lt;p&gt;Solutions for leetcode 10
     
     </summary>
     
@@ -79,11 +78,11 @@
     <link href="http://yoursite.com/2017/09/06/Tree-Summary/"/>
     <id>http://yoursite.com/2017/09/06/Tree-Summary/</id>
     <published>2017-09-07T04:39:29.000Z</published>
-    <updated>2017-09-09T00:58:51.000Z</updated>
+    <updated>2018-09-27T19:06:47.375Z</updated>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;二叉树遍历的问题&quot;&gt;&lt;a href=&quot;#二叉树遍历的问题&quot; class=&quot;headerlink&quot; title=&quot;二叉树遍历的问题&quot;&gt;&lt;/a&gt;二叉树遍历的问题&lt;/h3&gt;&lt;p&gt;Binary Tree preorder traversal ,inorder traver
+      &lt;p&gt;Leetcode tree problem
     
     </summary>
     
@@ -101,12 +100,11 @@
     <link href="http://yoursite.com/2017/09/04/binary-tree-traverse/"/>
     <id>http://yoursite.com/2017/09/04/binary-tree-traverse/</id>
     <published>2017-09-04T19:50:28.000Z</published>
-    <updated>2017-09-05T17:45:15.000Z</updated>
+    <updated>2018-09-27T19:07:42.016Z</updated>
     
     <summary type="html">
     
-      &lt;blockquote&gt;
-&lt;p&gt;Given a binary tree, return the inorder, postorder and preorder traversal of its nodes’ values.&lt;br&gt;There are three solutions
+      &lt;p&gt;Leetcode Tree traverse problem
     
     </summary>
     
@@ -124,12 +122,11 @@
     <link href="http://yoursite.com/2017/09/03/verify-postorder-sequence-BST/"/>
     <id>http://yoursite.com/2017/09/03/verify-postorder-sequence-BST/</id>
     <published>2017-09-04T01:37:21.000Z</published>
-    <updated>2017-09-04T02:14:24.000Z</updated>
+    <updated>2018-09-27T19:10:54.849Z</updated>
     
     <summary type="html">
     
-      &lt;blockquote&gt;
-&lt;p&gt;Given an array of numbers, verify whether it is the correct preorder traversal sequence of a binary search tree. You may ass
+      &lt;p&gt;Two solutions for leetcode 255.
     
     </summary>
     
@@ -149,11 +146,11 @@
     <link href="http://yoursite.com/2017/09/02/largest-BST-subtree/"/>
     <id>http://yoursite.com/2017/09/02/largest-BST-subtree/</id>
     <published>2017-09-02T20:47:09.000Z</published>
-    <updated>2017-09-04T02:13:59.000Z</updated>
+    <updated>2018-09-27T19:09:29.608Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;Given a binary tree, find the largest subtree which is a Binary Search Tree (BST), where largest means subtree with largest number of nod
+      &lt;p&gt;My c++ solution to this problem.
     
     </summary>
     
@@ -173,11 +170,11 @@
     <link href="http://yoursite.com/2017/09/01/serialize_deserialize/"/>
     <id>http://yoursite.com/2017/09/01/serialize_deserialize/</id>
     <published>2017-09-01T21:08:39.000Z</published>
-    <updated>2017-09-01T21:54:49.000Z</updated>
+    <updated>2018-09-27T19:12:45.281Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;Serialization is the process of converting a data structure or object into a sequence of bits so that it can be stored in a file or memor
+      &lt;p&gt;Solution for Leetcode 449.
     
     </summary>
     
@@ -192,18 +189,19 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2017/08/30/hello-world/"/>
-    <id>http://yoursite.com/2017/08/30/hello-world/</id>
-    <published>2017-08-31T03:49:32.000Z</published>
-    <updated>2017-08-31T03:49:32.000Z</updated>
+    <link href="http://yoursite.com/2017/05/12/hello-world/"/>
+    <id>http://yoursite.com/2017/05/12/hello-world/</id>
+    <published>2017-05-13T01:11:54.000Z</published>
+    <updated>2018-09-27T20:29:18.693Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;菜鸟码农一枚，找工作期间需要一点输出端来帮助建立自己知识体系，又因为从小不爱写东西导致现在语言组织能力愈加低下，如果有代码或者逻辑方面有问题的请给我留言，非常喜欢被打脸的感觉。lol&lt;/p&gt;
-
+      &lt;p&gt;First Blog
     
     </summary>
     
+    
+      <category term="life" scheme="http://yoursite.com/tags/life/"/>
     
   </entry>
   

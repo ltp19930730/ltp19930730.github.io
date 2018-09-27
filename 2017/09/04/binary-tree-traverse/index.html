@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="en">
+<html class="theme-next mist use-motion" lang="en">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -97,18 +97,18 @@
 
 
 
-<meta name="description" content="Given a binary tree, return the inorder, postorder and preorder traversal of its nodes’ values.There are three solutions to the giving problem : 1) Recursive 2) Iterative 3) MorrisMorris solution is">
+<meta name="description" content="Leetcode Tree traverse problem">
 <meta name="keywords" content="C++,Algorithm,Leetcode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Binary Tree Traverse">
 <meta property="og:url" content="http://yoursite.com/2017/09/04/binary-tree-traverse/index.html">
 <meta property="og:site_name" content="TeslaX">
-<meta property="og:description" content="Given a binary tree, return the inorder, postorder and preorder traversal of its nodes’ values.There are three solutions to the giving problem : 1) Recursive 2) Iterative 3) MorrisMorris solution is">
+<meta property="og:description" content="Leetcode Tree traverse problem">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-09-05T17:45:15.000Z">
+<meta property="og:updated_time" content="2018-09-27T19:07:42.016Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Binary Tree Traverse">
-<meta name="twitter:description" content="Given a binary tree, return the inorder, postorder and preorder traversal of its nodes’ values.There are three solutions to the giving problem : 1) Recursive 2) Iterative 3) MorrisMorris solution is">
+<meta name="twitter:description" content="Leetcode Tree traverse problem">
 
 
 
@@ -116,7 +116,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Mist',
     version: '5.1.2',
     sidebar: {"position":"left","display":"hide","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -361,7 +361,8 @@
       
 
       
-        <blockquote>
+        <p>Leetcode Tree traverse problem <a id="more"></a></p>
+<blockquote>
 <p>Given a binary tree, return the inorder, postorder and preorder traversal of its nodes’ values.<br>There are three solutions to the giving problem : 1) Recursive 2) Iterative 3) Morris<br>Morris solution is quite same for inorder and preorder but some kind of different for the postorder.</p>
 </blockquote>
 <h2 id="Inorder"><a href="#Inorder" class="headerlink" title="Inorder"></a>Inorder</h2><p>Three ways to traverse the binary tree :<br>1) recursive time: O(N) space: O(N)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    vector&lt;int&gt; inorderTraversal(TreeNode* root) &#123;</div><div class="line">        vector&lt;int&gt; res;</div><div class="line">        helper(root,res);</div><div class="line">        return res;</div><div class="line">    &#125;</div><div class="line">    void helper(TreeNode* root, vector&lt;int&gt;&amp;res)&#123;</div><div class="line">        if (!root) return;</div><div class="line">        helper(root-&gt;left,res);</div><div class="line">        res.push_back(root-&gt;val);</div><div class="line">        helper(root-&gt;right,res);</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
@@ -638,7 +639,7 @@
 
   <span class="post-meta-divider">|</span>
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.2</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.2</div>
 
 
         
@@ -726,13 +727,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
-
-
 
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
